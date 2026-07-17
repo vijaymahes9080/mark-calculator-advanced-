@@ -41,19 +41,68 @@
 
 ## 🌟 Highlights
 
-<table>
+<p align="center">
+  <img src="https://img.shields.io/badge/🎓_MULTI--UNIVERSITY-40%2B_Universities-2196F3?style=for-the-badge&logo=university&logoColor=white" alt="Multi University">
+  <img src="https://img.shields.io/badge/⚡_REAL--TIME-GPA_Instantly-4CAF50?style=for-the-badge&logo=javascript&logoColor=white" alt="Real Time">
+  <img src="https://img.shields.io/badge/📊_CHARTS-Canvas_Analytics-9C27B0?style=for-the-badge&logo=chart.js&logoColor=white" alt="Charts">
+  <img src="https://img.shields.io/badge/🎨_THEMES-6_Beautiful-FF9800?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Themes">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/📱_RESPONSIVE-Desktop_%26_Mobile-E91E63?style=for-the-badge&logo=html5&logoColor=white" alt="Responsive">
+  <img src="https://img.shields.io/badge/💾_OFFLINE--READY-No_Internet_NEEDED-00BCD4?style=for-the-badge&logo=pwa&logoColor=white" alt="Offline Ready">
+  <img src="https://img.shields.io/badge/🔐_PRIVACY-100%25_LocalStorage-795548?style=for-the-badge&logo=lock&logoColor=white" alt="Privacy">
+  <img src="https://img.shields.io/badge/🚀_ZERO-Dependencies-607D8B?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Zero Dependencies">
+</p>
+
+<table align="center">
   <tr>
-    <td align="center">
-      <img src="https://img.shields.io/badge/-Multi%20University-40%2B%20Universities-blue?style=flat-square&labelColor=1a1a2e" alt="Multi University">
+    <td align="center" width="120">
+      <img src="https://img.shields.io/badge/40+-blue?style=flat-square&label=Universities&labelColor=1a1a2e" alt="40+ Universities">
     </td>
-    <td align="center">
-      <img src="https://img.shields.io/badge/-Real%20Time-GPA%20Instantly-green?style=flat-square&labelColor=1a1a2e" alt="Real Time">
+    <td align="center" width="120">
+      <img src="https://img.shields.io/badge/10+-green?style=flat-square&label=Regulations&labelColor=1a1a2e" alt="10+ Regulations">
     </td>
-    <td align="center">
-      <img src="https://img.shields.io/badge/-Charts-Canvas%20Analytics-purple?style=flat-square&labelColor=1a1a2e" alt="Charts">
+    <td align="center" width="120">
+      <img src="https://img.shields.io/badge/6-purple?style=flat-square&label=Themes&labelColor=1a1a2e" alt="6 Themes">
     </td>
-    <td align="center">
-      <img src="https://img.shields.io/badge/-Themes-6%20Themes-orange?style=flat-square&labelColor=1a1a2e" alt="Themes">
+    <td align="center" width="120">
+      <img src="https://img.shields.io/badge/4-orange?style=flat-square&label=Export+Formats&labelColor=1a1a2e" alt="4 Export Formats">
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<table align="center" width="80%">
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🏛️ Multi-University Support</h3>
+      <p>Anna University (R2013/R2017/R2021/R2025), Delhi University (CBCS), Madras, VIT, BITS & 35+ more</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>⚡ Real-Time Calculations</h3>
+      <p>GPA, CGPA, percentages update instantly as you type — no button clicks needed</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>📊 Interactive Charts</h3>
+      <p>Grade distribution, GPA trends, subject comparisons — all rendered with Canvas API</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🎨 6 Beautiful Themes</h3>
+      <p>Glassmorphism, Dark, Light, Ocean, Forest, Cyber Royal — switch instantly</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>📱 Fully Responsive</h3>
+      <p>Works seamlessly on desktop, tablet, and mobile browsers</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>💾 100% Offline</h3>
+      <p>No internet required. All data stays in your browser with LocalStorage</p>
     </td>
   </tr>
 </table>
