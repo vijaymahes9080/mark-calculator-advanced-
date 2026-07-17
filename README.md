@@ -1,195 +1,166 @@
-<h1 align="center">
-  <br>
-  🎓 ResultAnalyzer
-  <br>
-</h1>
+<div align="center">
 
-<h4 align="center">Universal Indian University Result Analyzer & CGPA Calculator</h4>
-
-<p align="center">
-  <a href="https://github.com/vijaymahes9080/mark-calculator">
-    <img src="https://img.shields.io/badge/version-1.0.1-blue?style=for-the-badge" alt="Version">
-  </a>
-  <a href="LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="License">
-  </a>
-  <a href="https://html5.org">
-    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-  </a>
-  <a href="https://www.w3.org/Style/CSS/">
-    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-  </a>
-  <a href="https://javascript.com">
-    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-  </a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Offline-Ready-9b59b6?style=for-the-badge&logo=pwa" alt="Offline Ready">
-  <img src="https://img.shields.io/badge/No%20Dependencies-zero-red?style=for-the-badge" alt="Zero Dependencies">
-  <img src="https://img.shields.io/badge/Universities-40+-orange?style=for-the-badge" alt="40+ Universities">
-  <img src="https://img.shields.io/badge/Themes-6-purple?style=for-the-badge" alt="6 Themes">
-</p>
-
----
-
-<p align="center">
-  <b>A comprehensive, offline-ready web application for Indian university students to calculate GPA, CGPA, percentages, and analyze academic performance across multiple semesters.</b>
-</p>
-
----
-
-## 🌟 Highlights
-
-<p align="center">
-  <img src="https://img.shields.io/badge/🎓_MULTI--UNIVERSITY-40%2B_Universities-2196F3?style=for-the-badge&logo=university&logoColor=white" alt="Multi University">
-  <img src="https://img.shields.io/badge/⚡_REAL--TIME-GPA_Instantly-4CAF50?style=for-the-badge&logo=javascript&logoColor=white" alt="Real Time">
-  <img src="https://img.shields.io/badge/📊_CHARTS-Canvas_Analytics-9C27B0?style=for-the-badge&logo=chart.js&logoColor=white" alt="Charts">
-  <img src="https://img.shields.io/badge/🎨_THEMES-6_Beautiful-FF9800?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Themes">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/📱_RESPONSIVE-Desktop_%26_Mobile-E91E63?style=for-the-badge&logo=html5&logoColor=white" alt="Responsive">
-  <img src="https://img.shields.io/badge/💾_OFFLINE--READY-No_Internet_NEEDED-00BCD4?style=for-the-badge&logo=pwa&logoColor=white" alt="Offline Ready">
-  <img src="https://img.shields.io/badge/🔐_PRIVACY-100%25_LocalStorage-795548?style=for-the-badge&logo=lock&logoColor=white" alt="Privacy">
-  <img src="https://img.shields.io/badge/🚀_ZERO-Dependencies-607D8B?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Zero Dependencies">
-</p>
-
-<table align="center">
-  <tr>
-    <td align="center" width="120">
-      <img src="https://img.shields.io/badge/40+-blue?style=flat-square&label=Universities&labelColor=1a1a2e" alt="40+ Universities">
-    </td>
-    <td align="center" width="120">
-      <img src="https://img.shields.io/badge/10+-green?style=flat-square&label=Regulations&labelColor=1a1a2e" alt="10+ Regulations">
-    </td>
-    <td align="center" width="120">
-      <img src="https://img.shields.io/badge/6-purple?style=flat-square&label=Themes&labelColor=1a1a2e" alt="6 Themes">
-    </td>
-    <td align="center" width="120">
-      <img src="https://img.shields.io/badge/4-orange?style=flat-square&label=Export+Formats&labelColor=1a1a2e" alt="4 Export Formats">
-    </td>
-  </tr>
-</table>
+![ResultAnalyzer Hero Banner](assets/hero_banner.png)
 
 <br>
 
-<table align="center" width="80%">
+# 🎓 ResultAnalyzer
+
+### *Universal Indian University Result Analyzer & CGPA Calculator*
+
+<br>
+
+[![Version](https://img.shields.io/badge/version-1.0.1-6C63FF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vijaymahes9080/mark-calculator)
+[![License](https://img.shields.io/badge/license-MIT-00C9A7?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://html5.org)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://javascript.com)
+
+<br>
+
+[![Offline Ready](https://img.shields.io/badge/⚡_OFFLINE--READY-No_Internet_Needed-9b59b6?style=for-the-badge)](https://github.com/vijaymahes9080/mark-calculator)
+[![Zero Dependencies](https://img.shields.io/badge/🚀_ZERO-Dependencies-FF6B6B?style=for-the-badge)](https://github.com/vijaymahes9080/mark-calculator)
+[![Universities](https://img.shields.io/badge/🏛️_UNIVERSITIES-40%2B_Supported-2196F3?style=for-the-badge)](https://github.com/vijaymahes9080/mark-calculator)
+[![Themes](https://img.shields.io/badge/🎨_THEMES-6_Beautiful-FF9800?style=for-the-badge)](https://github.com/vijaymahes9080/mark-calculator)
+
+<br>
+
+> **A comprehensive, offline-ready web application for Indian university students to calculate GPA, CGPA, percentages, and analyze academic performance across multiple semesters.**
+
+</div>
+
+---
+
+## 🏠 Dashboard Preview
+
+![Dashboard Preview](assets/dashboard_screenshot.png)
+
+> *Home Dashboard with live CGPA tracking, student profile management, and instant stat cards — all wrapped in a stunning glassmorphism UI.*
+
+---
+
+## ✨ Features at a Glance
+
+<table>
   <tr>
-    <td width="50%" valign="top">
-      <h3>🏛️ Multi-University Support</h3>
-      <p>Anna University (R2013/R2017/R2021/R2025), Delhi University (CBCS), Madras, VIT, BITS & 35+ more</p>
+    <td align="center" width="180">
+      <h2>🏛️</h2>
+      <b>40+ Universities</b><br>
+      Anna, Delhi, VIT, BITS & more
     </td>
-    <td width="50%" valign="top">
-      <h3>⚡ Real-Time Calculations</h3>
-      <p>GPA, CGPA, percentages update instantly as you type — no button clicks needed</p>
+    <td align="center" width="180">
+      <h2>⚡</h2>
+      <b>Real-Time Calc</b><br>
+      GPA & CGPA update as you type
+    </td>
+    <td align="center" width="180">
+      <h2>📈</h2>
+      <b>Canvas Charts</b><br>
+      Grade trends & comparisons
+    </td>
+    <td align="center" width="180">
+      <h2>🎨</h2>
+      <b>6 Themes</b><br>
+      Glass, Dark, Ocean, Cyber & more
     </td>
   </tr>
   <tr>
-    <td width="50%" valign="top">
-      <h3>📊 Interactive Charts</h3>
-      <p>Grade distribution, GPA trends, subject comparisons — all rendered with Canvas API</p>
+    <td align="center" width="180">
+      <h2>📱</h2>
+      <b>Fully Responsive</b><br>
+      Desktop, tablet & mobile ready
     </td>
-    <td width="50%" valign="top">
-      <h3>🎨 6 Beautiful Themes</h3>
-      <p>Glassmorphism, Dark, Light, Ocean, Forest, Cyber Royal — switch instantly</p>
+    <td align="center" width="180">
+      <h2>💾</h2>
+      <b>100% Offline</b><br>
+      No internet needed, LocalStorage
     </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>📱 Fully Responsive</h3>
-      <p>Works seamlessly on desktop, tablet, and mobile browsers</p>
+    <td align="center" width="180">
+      <h2>🔐</h2>
+      <b>Privacy First</b><br>
+      All data stays in your browser
     </td>
-    <td width="50%" valign="top">
-      <h3>💾 100% Offline</h3>
-      <p>No internet required. All data stays in your browser with LocalStorage</p>
+    <td align="center" width="180">
+      <h2>📤</h2>
+      <b>5 Export Formats</b><br>
+      CSV, Excel, PDF, PNG, JSON
     </td>
   </tr>
 </table>
 
 ---
 
-## 📸 Application Sections
+## 📋 Marks Entry — Subject-wise Input
 
-### 🏠 Home Dashboard
-> Student profile management with real-time CGPA and percentage tracking
+![Marks Entry](assets/marks_entry_screenshot.png)
 
-| Metric | Description |
-|--------|-------------|
-| 🎯 **Cumulative CGPA** | Live updated overall grade point average |
-| 📊 **Overall Percentage** | Configurable formula (CGPA×9.5, Custom, etc.) |
-| ✅ **Credits Earned** | Track earned vs total credits |
-| 🏆 **Passing Status** | PASS/FAIL status with backlog count |
-
----
-
-### 🎓 University Rules
-> Configure grading systems for 40+ Indian universities
-
-| University | Regulation | Internal | External |
-|------------|------------|----------|----------|
-| Anna University | R2021 | 40% | 60% |
-| Anna University | R2017 | 20% | 80% |
-| Anna University | R2013 | 20% | 80% |
-| Anna University | R2025 | 50% | 50% |
-| Delhi University | CBCS | 25% | 75% |
-| Madras University | Standard | 25% | 75% |
-| VIT University | Standard | 40% | 60% |
-| BITS Pilani | Standard | 40% | 60% |
-
----
-
-### 📋 Marks Entry
-> Subject-wise marks input with live calculation
+> *Enter subject codes, credits, internal marks & ESE scores. Status badges (✅ PASS / ❌ FAIL) update instantly. Filter, search, undo/redo — all built in.*
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│ Subject Code │ Subject Name     │ Credits │ Int  │ ESE │ GP   │
-├──────────────┼──────────────────┼─────────┼──────┼─────┼──────┤
-│ CS3301       │ Data Structures  │    4    │  32  │  48 │  8   │
-│ CS3302       │ Operating Systems│    4    │  35  │  52 │  9   │
-│ CS3303       │ Database Systems │    3    │  28  │  42 │  7   │
-│ MA3151       │ Linear Algebra   │    4    │  34  │  46 │  8   │
+│ Subject Code │ Subject Name      │ Credits │ Int  │ ESE │ GP   │
+├──────────────┼───────────────────┼─────────┼──────┼─────┼──────┤
+│ CS3301       │ Data Structures   │    4    │  32  │  48 │  8   │
+│ CS3302       │ Operating Systems │    4    │  35  │  52 │  9   │
+│ CS3303       │ Database Systems  │    3    │  28  │  42 │  7   │
+│ MA3151       │ Linear Algebra    │    4    │  34  │  46 │  8   │
 └─────────────────────────────────────────────────────────────────┘
+         ↓
+   Semester GPA: 8.25  |  Credits Earned: 15/15  |  Status: PASS
 ```
 
 ---
 
-### 📊 Analytics & Charts
-> Visual performance insights with Canvas-rendered charts
+## 📊 Analytics & Charts
 
-| Chart | Purpose |
-|-------|---------|
-| 🥧 **Grade Distribution** | Doughnut chart showing grade spread |
-| 📈 **GPA Trend** | Line chart tracking semester-wise GPA |
-| 📊 **Subject Comparison** | Bar chart: Internal vs ESE marks |
-| 🎯 **Credit Distribution** | Doughnut chart of earned vs pending credits |
+![Analytics & Charts](assets/analytics_charts_screenshot.png)
 
----
+> *Four interactive Canvas-rendered charts give you deep performance insights: grade spread, semester GPA trend, subject-wise comparison, and credit distribution.*
 
-### 🔮 Predictors & Tools
-
-| Tool | What It Does |
-|------|-------------|
-| 🎯 **CGPA Predictor** | Calculate required GPA for target CGPA |
-| 📅 **Attendance Tracker** | Monitor attendance % and shortage recovery |
-| 📈 **Grade Improvement** | Estimate CGPA boost from grade improvements |
+| Chart | Type | What It Shows |
+|-------|------|----------------|
+| 🥧 **Grade Distribution** | Doughnut | O, A+, A, B+, B, C grade spread |
+| 📈 **GPA Trend** | Line Chart | Semester-wise GPA progression |
+| 📊 **Subject Comparison** | Bar Chart | Internal vs ESE marks per subject |
+| 🎯 **Credit Distribution** | Doughnut | Earned credits vs pending credits |
 
 ---
 
-### ⚖ University Comparison
-> Side-by-side grading system comparison
+## 🎨 6 Beautiful Themes
+
+![Themes Showcase](assets/themes_showcase.png)
+
+> *Switch between 6 stunning themes instantly from the header dropdown — your preference is saved automatically.*
+
+| Theme | Style | Best For |
+|-------|-------|----------|
+| 🌌 **Glassmorphism** | Frosted glass + blur effects | Premium modern look |
+| 🌙 **Dark Mode** | Pure dark with electric accents | Night-time use |
+| ☀️ **Light Mode** | Clean white, crisp UI | Daytime / printing |
+| 🌊 **Academic Ocean** | Professional deep blue tones | Academic presentations |
+| 🌲 **Forest Slate** | Nature-inspired dark greens | Calm focused study |
+| 💜 **Cyber Royal** | Futuristic purple/violet | Style-forward vibe |
+
+---
+
+## 🔮 Predictors & Tools — Desktop & Mobile
+
+![Predictors & Mobile View](assets/predictors_mobile_screenshot.png)
+
+> *Responsive across all devices. Tools work perfectly on phones for quick on-the-go calculations.*
 
 ```
-┌─────────────────────────────┬──────────────────┬──────────────────┐
-│         Metric              │    System A      │    System B      │
-├─────────────────────────────┼──────────────────┼──────────────────┤
-│ Internal Weightage          │      40%         │      25%         │
-│ External Weightage          │      60%         │      75%         │
-│ Min External Pass           │       45         │       35         │
-│ Total Passing Mark          │      50%         │      40%         │
-│ Grade Count                 │       7          │       9          │
-└─────────────────────────────┴──────────────────┴──────────────────┘
+🎯  CGPA Predictor & Target Planner
+    → Enter completed credits, remaining credits & target CGPA
+    → Instantly get the required GPA you need to achieve
+
+📅  Attendance & Shortage Tracker
+    → Enter total & attended classes + threshold %
+    → See your attendance % & how many classes you need
+
+📈  Grade Improvement Planner
+    → Input current grade point & target grade point
+    → Estimate how your CGPA will improve
 ```
 
 ---
@@ -204,60 +175,12 @@ git clone https://github.com/vijaymahes9080/mark-calculator.git
 cd mark-calculator
 
 # Open in browser (no server needed!)
-start index.html
+start index.html          # Windows
+open index.html           # macOS
+xdg-open index.html       # Linux
 ```
 
-> **No build step. No dependencies. Just open and use!**
-
----
-
-## 🎨 Themes
-
-Choose from **6 beautiful themes**:
-
-| Theme | Style |
-|-------|-------|
-| 🌌 **Glassmorphism** | Modern glass effect with blur |
-| 🌙 **Dark Mode** | Easy on the eyes |
-| ☀️ **Light Mode** | Clean and bright |
-| 🌊 **Academic Ocean** | Professional blue tones |
-| 🌲 **Forest Slate** | Nature-inspired greens |
-| 💜 **Cyber Royal** | Futuristic purple vibe |
-
----
-
-## ⌨️ Keyboard Shortcuts
-
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl + S` | Save student profile |
-| `Ctrl + Z` | Undo last change |
-| `Ctrl + Y` | Redo last change |
-| `Ctrl + P` | Print report / PDF |
-
----
-
-## 📁 Project Structure
-
-```
-mark-calculator/
-│
-├── 📄 index.html              # Main application entry
-│
-├── 📂 css/
-│   ├── 🎨 style.css          # Core styling
-│   ├── 🎨 themes.css         # 6 theme definitions
-│   └── 📱 responsive.css     # Mobile responsiveness
-│
-└── 📂 js/
-    ├── 💾 storage.js         # LocalStorage manager
-    ├── ✅ validation.js      # Input validation
-    ├── 📊 grade.js           # Grading engine & presets
-    ├── 🔢 calculator.js      # GPA/CGPA calculations
-    ├── 📈 charts.js          # Canvas chart rendering
-    ├── 📤 export.js          # CSV/Excel/PDF export
-    └── 🚀 app.js             # Main controller
-```
+> **No build step. No dependencies. No internet required. Just open and use!**
 
 ---
 
@@ -266,75 +189,156 @@ mark-calculator/
 <details>
 <summary><b>🏛️ Central Universities (16)</b></summary>
 
-- Central University of Tamil Nadu
-- University of Delhi
-- Jawaharlal Nehru University
-- Banaras Hindu University
-- Aligarh Muslim University
-- University of Hyderabad
-- Pondicherry University
-- IGNOU
-- Central University of Kerala
-- Central University of Karnataka
-- Central University of Rajasthan
-- Central University of Punjab
-- Central University of Haryana
-- Central University of Odisha
-- Central University of Jammu
-- Visva-Bharati
+| University | Location |
+|------------|----------|
+| Central University of Tamil Nadu | Tamil Nadu |
+| University of Delhi | Delhi |
+| Jawaharlal Nehru University | Delhi |
+| Banaras Hindu University | Uttar Pradesh |
+| Aligarh Muslim University | Uttar Pradesh |
+| University of Hyderabad | Telangana |
+| Pondicherry University | Puducherry |
+| IGNOU | Delhi |
+| Central University of Kerala | Kerala |
+| Central University of Karnataka | Karnataka |
+| Central University of Rajasthan | Rajasthan |
+| Central University of Punjab | Punjab |
+| Central University of Haryana | Haryana |
+| Central University of Odisha | Odisha |
+| Central University of Jammu | J&K |
+| Visva-Bharati | West Bengal |
 
 </details>
 
 <details>
 <summary><b>🏫 State Universities (21)</b></summary>
 
-- Anna University
-- Madras University
-- Bharathiar University
-- Bharathidasan University
-- Alagappa University
-- Periyar University
-- Mother Teresa Women's University
-- Manonmaniam Sundaranar University
-- Tamil Nadu Open University
-- Madurai Kamaraj University
-- Annamalai University
-- Calcutta University
-- Mumbai University
-- Osmania University
-- Andhra University
-- Kerala University
-- Kannur University
-- Lucknow University
-- Pune University
-- Bangalore University
-- Mysore University
+| University | State |
+|------------|-------|
+| Anna University | Tamil Nadu |
+| Madras University | Tamil Nadu |
+| Bharathiar University | Tamil Nadu |
+| Bharathidasan University | Tamil Nadu |
+| Alagappa University | Tamil Nadu |
+| Periyar University | Tamil Nadu |
+| Mother Teresa Women's University | Tamil Nadu |
+| Manonmaniam Sundaranar University | Tamil Nadu |
+| Tamil Nadu Open University | Tamil Nadu |
+| Madurai Kamaraj University | Tamil Nadu |
+| Annamalai University | Tamil Nadu |
+| Calcutta University | West Bengal |
+| Mumbai University | Maharashtra |
+| Osmania University | Telangana |
+| Andhra University | Andhra Pradesh |
+| Kerala University | Kerala |
+| Kannur University | Kerala |
+| Lucknow University | Uttar Pradesh |
+| Pune University | Maharashtra |
+| Bangalore University | Karnataka |
+| Mysore University | Karnataka |
 
 </details>
 
 <details>
 <summary><b>🎓 Deemed & Autonomous (6)</b></summary>
 
-- VIT University
-- SRM Institute of Science and Technology
-- Sathyabama Institute of Science and Technology
-- Amrita Vishwa Vidyapeetham
-- BITS Pilani
-- SASTRA Deemed University
+| University | Location | Type |
+|------------|----------|------|
+| VIT University | Vellore, TN | Deemed |
+| SRM Institute of Science and Technology | Chennai, TN | Deemed |
+| Sathyabama Institute of Science and Technology | Chennai, TN | Deemed |
+| Amrita Vishwa Vidyapeetham | Coimbatore, TN | Deemed |
+| BITS Pilani | Pilani, Rajasthan | Deemed |
+| SASTRA Deemed University | Thanjavur, TN | Deemed |
 
 </details>
 
 ---
 
+## 🏛️ University Grading Rules
+
+| University | Regulation | Internal | External | Min ESE Pass | Total Pass |
+|------------|------------|----------|----------|:------------:|:----------:|
+| **Anna University** | R2025 | 50% | 50% | 40 | 50% |
+| **Anna University** | R2021 | 40% | 60% | 45 | 50% |
+| **Anna University** | R2017 | 20% | 80% | 45 | 50% |
+| **Anna University** | R2013 | 20% | 80% | 45 | 50% |
+| **Delhi University** | CBCS | 25% | 75% | 35 | 40% |
+| **Madras University** | Standard | 25% | 75% | 40 | 50% |
+| **VIT University** | Standard | 40% | 60% | 45 | 50% |
+| **BITS Pilani** | Standard | 40% | 60% | 40 | 45% |
+
+---
+
+## ⚖️ University Comparison Tool
+
+```
+┌─────────────────────────────┬──────────────────┬──────────────────┐
+│         Metric              │  Anna Univ R2021 │ Delhi Univ CBCS  │
+├─────────────────────────────┼──────────────────┼──────────────────┤
+│ Internal Weightage          │      40%         │      25%         │
+│ External Weightage          │      60%         │      75%         │
+│ Min External Pass Marks     │       45         │       35         │
+│ Min Total Passing Mark      │      50%         │      40%         │
+│ Grade Count                 │       7          │       9          │
+│ Percentage Formula          │  CGPA × 9.5      │  (Obt/Max)×100  │
+└─────────────────────────────┴──────────────────┴──────────────────┘
+```
+
+---
+
 ## 📤 Export Options
 
-| Format | Available For |
-|--------|---------------|
-| 📄 **CSV** | Subject-wise marks data |
-| 📊 **Excel** | Full semester report |
-| 🖨️ **PDF / Print** | Complete analytics report |
-| 💾 **PNG** | Individual chart images |
-| 📦 **JSON** | Complete data backup |
+| Format | Description | Use Case |
+|--------|-------------|----------|
+| 📄 **CSV** | Subject-wise marks data | Spreadsheet import |
+| 📊 **Excel (.xlsx)** | Full semester report | Official record keeping |
+| 🖨️ **PDF / Print** | Complete analytics report | Submission / filing |
+| 🖼️ **PNG** | Individual chart images | Presentations |
+| 💾 **JSON** | Complete data backup | Data portability |
+
+---
+
+## ⌨️ Keyboard Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| `Ctrl + S` | 💾 Save student profile |
+| `Ctrl + Z` | ↩ Undo last change |
+| `Ctrl + Y` | ↪ Redo last change |
+| `Ctrl + P` | 🖨️ Print report / PDF |
+
+---
+
+## 📁 Project Structure
+
+```
+mark-calculator/
+│
+├── 📄 index.html                    # Main application entry (single file)
+│
+├── 📂 assets/                       # App screenshots & images
+│   ├── 🖼️ hero_banner.png
+│   ├── 🖼️ dashboard_screenshot.png
+│   ├── 🖼️ marks_entry_screenshot.png
+│   ├── 🖼️ analytics_charts_screenshot.png
+│   ├── 🖼️ themes_showcase.png
+│   └── 🖼️ predictors_mobile_screenshot.png
+│
+├── 📂 css/
+│   ├── 🎨 style.css                 # Core styling
+│   ├── 🎨 themes.css                # 6 theme definitions
+│   └── 📱 responsive.css            # Mobile responsiveness
+│
+└── 📂 js/
+    ├── 💾 storage.js                # LocalStorage manager
+    ├── ✅ validation.js             # Input validation
+    ├── 📊 grade.js                  # Grading engine & presets
+    ├── 🔢 calculator.js             # GPA/CGPA calculations
+    ├── 📈 charts.js                 # Canvas chart rendering
+    ├── 📤 export.js                 # CSV/Excel/PDF export
+    └── 🚀 app.js                    # Main controller
+```
 
 ---
 
@@ -344,8 +348,8 @@ mark-calculator/
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-  <img src="https://img.shields.io/badge/Canvas_API-FF6B6B?style=for-the-badge" alt="Canvas API">
-  <img src="https://img.shields.io/badge/LocalStorage-4ECDC4?style=for-the-badge" alt="LocalStorage">
+  <img src="https://img.shields.io/badge/Canvas_API-FF6B6B?style=for-the-badge&logo=html5&logoColor=white" alt="Canvas API">
+  <img src="https://img.shields.io/badge/LocalStorage-4ECDC4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="LocalStorage">
 </p>
 
 ---

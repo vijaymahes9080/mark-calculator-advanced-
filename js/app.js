@@ -7,6 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
     new AppController();
 });
 
+function escapeAttr(str) {
+    if (str === null || str === undefined) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+}
+
 class AppController {
     constructor() {
         this.undoStack = [];
@@ -571,18 +581,18 @@ class AppController {
             : '-';
 
         tr.innerHTML = `
-            <td data-label="Subject Code"><input type="text" class="cell-input cell-code" value="${code}" placeholder="CS3301"></td>
-            <td data-label="Subject Name"><input type="text" class="cell-input cell-name" value="${name}" placeholder="Data Structures"></td>
-            <td data-label="Credits *"><input type="number" class="cell-input cell-credits" value="${credits}" min="1" max="10"></td>
-            <td data-label="Int Marks"><input type="number" class="cell-input cell-internal" value="${internal}"></td>
-            <td data-label="Max Int"><input type="number" class="cell-input cell-max-internal" value="${maxInt}"></td>
-            <td data-label="ESE Marks"><input type="number" class="cell-input cell-external" value="${external}"></td>
-            <td data-label="Max ESE"><input type="number" class="cell-input cell-max-external" value="${maxExt}"></td>
+            <td data-label="Subject Code"><input type="text" class="cell-input cell-code" value="${escapeAttr(code)}" placeholder="CS3301"></td>
+            <td data-label="Subject Name"><input type="text" class="cell-input cell-name" value="${escapeAttr(name)}" placeholder="Data Structures"></td>
+            <td data-label="Credits *"><input type="number" class="cell-input cell-credits" value="${escapeAttr(credits)}" min="1" max="10"></td>
+            <td data-label="Int Marks"><input type="number" class="cell-input cell-internal" value="${escapeAttr(internal)}"></td>
+            <td data-label="Max Int"><input type="number" class="cell-input cell-max-internal" value="${escapeAttr(maxInt)}"></td>
+            <td data-label="ESE Marks"><input type="number" class="cell-input cell-external" value="${escapeAttr(external)}"></td>
+            <td data-label="Max ESE"><input type="number" class="cell-input cell-max-external" value="${escapeAttr(maxExt)}"></td>
             <td data-label="Max Total" class="cell-max-total">${Number(maxInt) + Number(maxExt)}</td>
-            <td data-label="Attendance %"><input type="number" class="cell-input cell-attendance" value="${att}" min="0" max="100"></td>
-            <td data-label="Grade" class="cell-grade-display" style="font-weight: bold;">${grade}</td>
-            <td data-label="GP" class="cell-gp-display">${gp}</td>
-            <td data-label="Earned" class="cell-earned-display">${earned}</td>
+            <td data-label="Attendance %"><input type="number" class="cell-input cell-attendance" value="${escapeAttr(att)}" min="0" max="100"></td>
+            <td data-label="Grade" class="cell-grade-display" style="font-weight: bold;">${escapeAttr(grade)}</td>
+            <td data-label="GP" class="cell-gp-display">${escapeAttr(gp)}</td>
+            <td data-label="Earned" class="cell-earned-display">${escapeAttr(earned)}</td>
             <td data-label="Status" class="cell-status-display">${statusBadge}</td>
             <td data-label="Actions">
                 <div style="display: flex; gap: 4px;">
@@ -602,9 +612,11 @@ class AppController {
         const inputs = tr.querySelectorAll('.cell-input');
         
         inputs.forEach(input => {
-            input.addEventListener('input', () => {
-                this.calculateSingleRowRealtime(tr);
-            });
+            if (!input.classList.contains('cell-max-internal') && !input.classList.contains('cell-max-external')) {
+                input.addEventListener('input', () => {
+                    this.calculateSingleRowRealtime(tr);
+                });
+            }
         });
 
         // Max internal / max external sum logic
@@ -702,6 +714,18 @@ class AppController {
             const earned = tr.querySelector('.cell-earned-display').innerText;
             const statusText = tr.querySelector('.cell-status-display').innerText.trim();
 
+            let statusVal, remarksVal;
+            if (statusText === 'PASS') {
+                statusVal = 'PASS';
+                remarksVal = 'Passed';
+            } else if (statusText === 'FAIL') {
+                statusVal = 'FAIL';
+                remarksVal = 'Failed';
+            } else {
+                statusVal = 'PENDING';
+                remarksVal = 'Pending calculation';
+            }
+
             subjects.push({
                 code: code,
                 name: name,
@@ -714,8 +738,8 @@ class AppController {
                 grade: grade,
                 gradePoint: gp,
                 earnedCredits: earned,
-                status: statusText === 'PASS' ? 'PASS' : 'FAIL',
-                remarks: statusText === 'PASS' ? 'Passed' : 'Failed'
+                status: statusVal,
+                remarks: remarksVal
             });
         });
 
@@ -728,7 +752,7 @@ class AppController {
         for (let i = 0; i < 4; i++) {
             this.addSubjectRow(null, false);
         }
-        this.showToast('Marks table reset.', 'error');
+        this.showToast('Marks table reset.', 'success');
     }
 
     triggerAutoFillPresets() {
@@ -993,7 +1017,10 @@ class AppController {
         let reportStr = `Attendance Percentage: ${res.percentage}%<br/>`;
         reportStr += `Eligibility Status: <strong>${res.status}</strong><br/>`;
 
-        if (res.requiredClasses > 0) {
+        if (res.requiredClasses === Infinity) {
+            reportStr += `⚠️ Target is 100%. You must attend ALL future classes to reach the target.`;
+            this.attCalcResult.style.color = 'var(--color-danger)';
+        } else if (res.requiredClasses > 0) {
             reportStr += `⚠️ You need to attend the next <strong>${res.requiredClasses}</strong> classes consecutively to restore attendance.`;
             this.attCalcResult.style.color = 'var(--color-warning)';
         } else {
@@ -1052,7 +1079,7 @@ class AppController {
             {
                 label: 'Internal Assessment Weightage',
                 valA: `${rulesA.weightage.internal}%`,
-                valB: `${rulesB.weightage.external}%`
+                valB: `${rulesB.weightage.internal}%`
             },
             {
                 label: 'ESE External Exam Weightage',

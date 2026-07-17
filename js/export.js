@@ -3,6 +3,20 @@
  * Handles PDF Print previews, CSV, Excel sheets, JSON configuration backups, and PNG captures.
  */
 class ExportManager {
+    static showToast(message, type = 'error') {
+        const container = document.getElementById('toast-container');
+        if (!container) { alert(message); return; }
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.innerText = message;
+        container.appendChild(toast);
+        setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => container.removeChild(toast), 300); }, 3000);
+    }
+
+    static escapeHtml(str) {
+        if (!str) return '';
+        return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
     /**
      * Trigger browser printing for clean PDF reports.
      * Uses print stylesheet overrides.
@@ -18,7 +32,7 @@ class ExportManager {
      */
     static exportToCSV(semesterTitle, subjects) {
         if (!subjects || subjects.length === 0) {
-            alert('No subject data to export.');
+            this.showToast('No subject data to export.', 'error');
             return;
         }
 
@@ -53,7 +67,7 @@ class ExportManager {
      */
     static exportToExcel(semesterTitle, subjects, studentDetails) {
         if (!subjects || subjects.length === 0) {
-            alert('No data to export.');
+            this.showToast('No data to export.', 'error');
             return;
         }
 
@@ -72,11 +86,11 @@ class ExportManager {
             </style>
         </head>
         <body>
-            <div class="title">${studentDetails.university} - Report Card</div>
+            <div class="title">${this.escapeHtml(studentDetails.university)} - Report Card</div>
             <table class="meta-table">
-                <tr><td>Student Name:</td><td>${studentDetails.name}</td><td>Roll Number:</td><td>${studentDetails.rollNumber}</td></tr>
-                <tr><td>Department:</td><td>${studentDetails.department}</td><td>Semester:</td><td>${semesterTitle}</td></tr>
-                <tr><td>College:</td><td>${studentDetails.college}</td><td>Date:</td><td>${studentDetails.date}</td></tr>
+                <tr><td>Student Name:</td><td>${this.escapeHtml(studentDetails.name)}</td><td>Roll Number:</td><td>${this.escapeHtml(studentDetails.rollNumber)}</td></tr>
+                <tr><td>Department:</td><td>${this.escapeHtml(studentDetails.department)}</td><td>Semester:</td><td>${this.escapeHtml(semesterTitle)}</td></tr>
+                <tr><td>College:</td><td>${this.escapeHtml(studentDetails.college)}</td><td>Date:</td><td>${this.escapeHtml(studentDetails.date)}</td></tr>
             </table>
             <br/>
             <table>
@@ -100,16 +114,16 @@ class ExportManager {
         subjects.forEach(sub => {
             html += `
                 <tr>
-                    <td>${sub.code}</td>
-                    <td>${sub.name}</td>
-                    <td>${sub.credits}</td>
-                    <td>${sub.internal}</td>
-                    <td>${sub.external}</td>
+                    <td>${this.escapeHtml(sub.code)}</td>
+                    <td>${this.escapeHtml(sub.name)}</td>
+                    <td>${this.escapeHtml(sub.credits)}</td>
+                    <td>${this.escapeHtml(sub.internal)}</td>
+                    <td>${this.escapeHtml(sub.external)}</td>
                     <td>${(Number(sub.internal) || 0) + (Number(sub.external) || 0)}</td>
-                    <td>${sub.grade}</td>
-                    <td>${sub.gradePoint}</td>
-                    <td>${sub.status}</td>
-                    <td>${sub.remarks || ''}</td>
+                    <td>${this.escapeHtml(sub.grade)}</td>
+                    <td>${this.escapeHtml(sub.gradePoint)}</td>
+                    <td>${this.escapeHtml(sub.status)}</td>
+                    <td>${this.escapeHtml(sub.remarks || '')}</td>
                 </tr>
             `;
         });
@@ -152,7 +166,7 @@ class ExportManager {
      */
     static importFromJSON(fileInputEl, callback) {
         if (!fileInputEl.files || fileInputEl.files.length === 0) {
-            alert('Please select a JSON file.');
+            this.showToast('Please select a JSON file.', 'error');
             return;
         }
 
@@ -163,13 +177,13 @@ class ExportManager {
             try {
                 const parsed = JSON.parse(e.target.result);
                 if (StorageManager.importFullState(parsed)) {
-                    alert('Academic data successfully restored from backup.');
+                    this.showToast('Academic data restored from backup!', 'success');
                     if (callback) callback();
                 } else {
-                    alert('Invalid file structure. Make sure you load a valid Academic Result backup JSON.');
+                    this.showToast('Invalid file structure.', 'error');
                 }
             } catch (err) {
-                alert('Failed to parse file. Ensure it is a valid JSON file.');
+                this.showToast('Failed to parse JSON file.', 'error');
             }
         };
 

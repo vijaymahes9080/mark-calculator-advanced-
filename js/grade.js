@@ -38,6 +38,7 @@ class GradingEngineClass {
                 { id: 'bharathiar', name: 'Bharathiar University' },
                 { id: 'bharathidasan', name: 'Bharathidasan University' },
                 { id: 'alagappa', name: 'Alagappa University' },
+                { id: 'gandhigram', name: 'Gandhigram Rural Institute' },
                 { id: 'periyar', name: 'Periyar University' },
                 { id: 'mother_teresa', name: "Mother Teresa Women's University" },
                 { id: 'msu', name: 'Manonmaniam Sundaranar University' },
@@ -277,13 +278,16 @@ class GradingEngineClass {
         }
 
         // Check course specific fallback first
-        const courseLower = course.toLowerCase().replace(/\s+&\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+        const courseLower = course.toLowerCase().replace(/\s+&\s+/g, '_').replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
         
         // Find university category
         let category = 'state';
         const isCentral = this.universities.central.some(u => u.name === university);
+        const isDeemed = this.universities.deemed.some(u => u.name === university);
         if (isCentral) {
             category = 'central';
+        } else if (isDeemed) {
+            category = 'engineering';
         }
 
         if (this.defaultRules[courseLower]) {

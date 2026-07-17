@@ -17,7 +17,11 @@ class StorageManager {
      * @param {Object} details 
      */
     static saveStudentDetails(details) {
-        localStorage.setItem(this.KEYS.STUDENT_DETAILS, JSON.stringify(details));
+        try {
+            localStorage.setItem(this.KEYS.STUDENT_DETAILS, JSON.stringify(details));
+        } catch (e) {
+            console.warn('Storage full. Could not save student details.');
+        }
     }
 
     /**
@@ -55,7 +59,11 @@ class StorageManager {
     static saveSemesterSubjects(semester, subjects) {
         const allSemesters = this.getAllSemesterData();
         allSemesters[semester] = subjects;
-        localStorage.setItem(this.KEYS.SEMESTER_DATA, JSON.stringify(allSemesters));
+        try {
+            localStorage.setItem(this.KEYS.SEMESTER_DATA, JSON.stringify(allSemesters));
+        } catch (e) {
+            console.warn('Storage full. Could not save semester data.');
+        }
     }
 
     /**
@@ -88,7 +96,11 @@ class StorageManager {
      * @param {Object} semesters 
      */
     static saveAllSemesterData(semesters) {
-        localStorage.setItem(this.KEYS.SEMESTER_DATA, JSON.stringify(semesters));
+        try {
+            localStorage.setItem(this.KEYS.SEMESTER_DATA, JSON.stringify(semesters));
+        } catch (e) {
+            console.warn('Storage full. Could not save semester data.');
+        }
     }
 
     /**
@@ -96,7 +108,11 @@ class StorageManager {
      * @param {Object} config { university, regulation }
      */
     static saveUniversityConfig(config) {
-        localStorage.setItem(this.KEYS.UNIVERSITY_CONFIG, JSON.stringify(config));
+        try {
+            localStorage.setItem(this.KEYS.UNIVERSITY_CONFIG, JSON.stringify(config));
+        } catch (e) {
+            console.warn('Storage full. Could not save university config.');
+        }
     }
 
     /**
@@ -125,7 +141,11 @@ class StorageManager {
      * @param {Object} rules 
      */
     static saveCustomRules(rules) {
-        localStorage.setItem(this.KEYS.CUSTOM_RULES, JSON.stringify(rules));
+        try {
+            localStorage.setItem(this.KEYS.CUSTOM_RULES, JSON.stringify(rules));
+        } catch (e) {
+            console.warn('Storage full. Could not save custom rules.');
+        }
     }
 
     /**
@@ -148,7 +168,11 @@ class StorageManager {
      * @param {string} theme 
      */
     static saveTheme(theme) {
-        localStorage.setItem(this.KEYS.THEME, theme);
+        try {
+            localStorage.setItem(this.KEYS.THEME, theme);
+        } catch (e) {
+            console.warn('Storage full. Could not save theme.');
+        }
     }
 
     /**
@@ -165,7 +189,11 @@ class StorageManager {
      */
     static savePreferences(preferences) {
         const current = this.getPreferences();
-        localStorage.setItem(this.KEYS.USER_PREFERENCES, JSON.stringify({ ...current, ...preferences }));
+        try {
+            localStorage.setItem(this.KEYS.USER_PREFERENCES, JSON.stringify({ ...current, ...preferences }));
+        } catch (e) {
+            console.warn('Storage full. Could not save preferences.');
+        }
     }
 
     /**

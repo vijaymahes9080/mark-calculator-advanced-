@@ -27,6 +27,8 @@ class AcademicCalculator {
             const gp = Number(sub.gradePoint) || 0;
             const status = sub.status;
             
+            if (status === 'PENDING') return; // Skip subjects without marks
+            
             totalCredits += credits;
             
             const internal = sub.internal !== '' ? Number(sub.internal) : 0;
@@ -168,13 +170,14 @@ class AcademicCalculator {
 
         if (percentage < targetPercent) {
             status = 'Shortage / Detained';
-            // Calculate how many more classes must be attended to hit the target percent
-            // (attended + X) / (conducted + X) = targetPercent / 100
-            // attended + X = (conducted * targetPercent / 100) + (X * targetPercent / 100)
-            // X * (1 - targetPercent/100) = (conducted * targetPercent/100) - attended
-            // X = ((conducted * targetPercent/100) - attended) / (1 - targetPercent/100)
             const targetRatio = targetPercent / 100;
-            requiredClasses = Math.ceil(((conducted * targetRatio) - attended) / (1 - targetRatio));
+            const denominator = 1 - targetRatio;
+            if (denominator > 0) {
+                requiredClasses = Math.ceil(((conducted * targetRatio) - attended) / denominator);
+            } else {
+                // Target is 100%: must attend all future classes
+                requiredClasses = Infinity;
+            }
             shortage = Number((targetPercent - percentage).toFixed(2));
         }
 

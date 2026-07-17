@@ -74,6 +74,14 @@ class ValidationManager {
             }
         }
 
+        // Validate attendance
+        if (rowData.attendance !== '' && rowData.attendance !== null) {
+            const attVal = Number(rowData.attendance);
+            if (isNaN(attVal) || attVal < 0 || attVal > 100) {
+                errors.push(`Row ${index}: Attendance must be between 0 and 100.`);
+            }
+        }
+
         return errors;
     }
 
@@ -123,7 +131,8 @@ class ValidationManager {
                 internal: internalEl.value,
                 maxInternal: maxInternalEl.value,
                 external: externalEl.value,
-                maxExternal: maxExternalEl.value
+                maxExternal: maxExternalEl.value,
+                attendance: tr.querySelector('.cell-attendance')?.value || ''
             };
 
             rowsData.push(rowData);

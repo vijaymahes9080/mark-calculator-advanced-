@@ -647,7 +647,7 @@ body {
     }
 
     /* Print only Home dashboard or specific active views */
-    .page-section#home, .page-section#marks {
+    .page-section#home, .page-section#marks-entry {
         display: block !important;
         page-break-after: always;
     }
