@@ -1,0 +1,34 @@
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Node (if used later)
+node_modules/
+npm-debug.log*
+
+# Dependencies
+bower_components/
+
+# Build output
+dist/
+build/
+
+# Temp files
+*.tmp
+*.bak
+
+# Environment
+.env
+.env.local
