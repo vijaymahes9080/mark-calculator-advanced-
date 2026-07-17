@@ -1,0 +1,153 @@
+/* Responsive rules for Universal Academic Result Analyzer */
+
+@media (max-width: 1024px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 16px;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .sidebar-brand {
+        margin-bottom: 16px;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        gap: 8px;
+    }
+
+    .nav-link {
+        padding: 8px 12px;
+        white-space: nowrap;
+    }
+
+    .nav-item.active .nav-link {
+        border-left: none;
+        border-bottom: 3px solid var(--color-primary);
+    }
+
+    .main-header {
+        padding: 0 16px;
+        flex-direction: column;
+        height: auto;
+        gap: 12px;
+        padding-bottom: 12px;
+        position: static;
+    }
+
+    .breadcrumb {
+        margin-top: 12px;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .content-wrapper {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Convert responsive table for mobile screens */
+    .subjects-table thead {
+        display: none; /* Hide standard header */
+    }
+
+    .subjects-table, .subjects-table tbody, .subjects-table tr, .subjects-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .subjects-table tr {
+        margin-bottom: 16px;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-sm);
+        background: rgba(255, 255, 255, 0.01);
+        padding: 8px;
+    }
+
+    .subjects-table td {
+        border-bottom: none;
+        padding: 6px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .subjects-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--color-muted);
+        font-size: 12px;
+        min-width: 100px;
+        text-align: left;
+    }
+
+    .cell-input {
+        width: 60%;
+        text-align: right;
+    }
+
+    .subjects-table td[data-label="Actions"] {
+        justify-content: flex-end;
+    }
+
+    .table-actions-bar {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-text {
+        font-size: 18px;
+    }
+
+    .logo-icon {
+        font-size: 24px;
+    }
+
+    .header-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .theme-dropdown {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
