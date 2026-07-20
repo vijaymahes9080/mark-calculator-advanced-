@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/academic-suite.css">
 </head>
 <body>
 
@@ -434,78 +435,300 @@
                     </div>
                 </section>
 
-                <!-- SECTION 5: PREDICTORS & TOOLS -->
+                <!-- SECTION 5: PREDICTORS & SMART ACADEMIC SUITE -->
                 <section class="page-section" id="predictors">
-                    <div class="form-grid">
-                        <!-- CGPA Goal Predictor -->
-                        <div class="card">
-                            <div class="card-header">
-                                <h2 class="card-title">CGPA Predictor & Target Planner</h2>
+                    <!-- Suite Tabs -->
+                    <div class="suite-tabs-nav">
+                        <button class="suite-tab-btn active" data-suite-tab="quick-tools">🔮 Target Planner</button>
+                        <button class="suite-tab-btn" data-suite-tab="iat-tracker">📝 IAT & ESE Predictor</button>
+                        <button class="suite-tab-btn" data-suite-tab="sandbox">🎛️ Semester Sandbox</button>
+                        <button class="suite-tab-btn" data-suite-tab="diagnostics">📈 Diagnostics & Recommendations</button>
+                        <button class="suite-tab-btn" data-suite-tab="transcript">🎓 Academic Profile Builder</button>
+                    </div>
+
+                    <!-- Panel 1: Quick Tools (Existing) -->
+                    <div class="suite-tab-panel active" id="suite-panel-quick-tools">
+                        <div class="form-grid">
+                            <!-- CGPA Goal Predictor -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2 class="card-title">CGPA Predictor & Target Planner</h2>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 12px;">
+                                    <label for="pred-target-cgpa">Goal Target CGPA</label>
+                                    <input type="number" step="0.01" class="form-control" id="pred-target-cgpa" value="8.50" min="0" max="10">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 12px;">
+                                    <label for="pred-completed-credits">Completed Credits</label>
+                                    <input type="number" class="form-control" id="pred-completed-credits" value="40" min="0">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 12px;">
+                                    <label for="pred-remaining-credits">Remaining Credits to Complete</label>
+                                    <input type="number" class="form-control" id="pred-remaining-credits" value="60" min="0">
+                                </div>
+                                <button class="action-btn" style="width: 100%; margin-top: 10px;" id="btn-predict-gpa">Calculate Needed GPA</button>
+                                
+                                <div style="margin-top: 20px; font-weight: 600; font-size: 15px;" id="pred-cgpa-result">
+                                    Result: Enter values to estimate target.
+                                </div>
                             </div>
-                            <div class="form-group" style="margin-bottom: 12px;">
-                                <label for="pred-target-cgpa">Goal Target CGPA</label>
-                                <input type="number" step="0.01" class="form-control" id="pred-target-cgpa" value="8.50" min="0" max="10">
+
+                            <!-- Attendance Eligibility Calculator -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2 class="card-title">Attendance & Shortage Tracker</h2>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 12px;">
+                                    <label for="att-conducted">Total Classes Conducted</label>
+                                    <input type="number" class="form-control" id="att-conducted" value="60" min="1">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 12px;">
+                                    <label for="att-attended">Total Classes Attended</label>
+                                    <input type="number" class="form-control" id="att-attended" value="40" min="0">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 12px;">
+                                    <label for="att-target">Target Attendance Threshold (%)</label>
+                                    <input type="number" class="form-control" id="att-target" value="75" min="0" max="100">
+                                </div>
+                                <button class="action-btn secondary" style="width: 100%; margin-top: 10px;" id="btn-calculate-attendance">Track Attendance</button>
+                                
+                                <div style="margin-top: 20px; font-weight: 600; font-size: 14px; line-height: 1.5;" id="att-calc-result">
+                                    Status: Enter classes to view metrics.
+                                </div>
                             </div>
-                            <div class="form-group" style="margin-bottom: 12px;">
-                                <label for="pred-completed-credits">Completed Credits</label>
-                                <input type="number" class="form-control" id="pred-completed-credits" value="40" min="0">
-                            </div>
-                            <div class="form-group" style="margin-bottom: 12px;">
-                                <label for="pred-remaining-credits">Remaining Credits to Complete</label>
-                                <input type="number" class="form-control" id="pred-remaining-credits" value="60" min="0">
-                            </div>
-                            <button class="action-btn" style="width: 100%; margin-top: 10px;" id="btn-predict-gpa">Calculate Needed GPA</button>
-                            
-                            <div style="margin-top: 20px; font-weight: 600; font-size: 15px;" id="pred-cgpa-result">
-                                Result: Enter values to estimate target.
+
+                            <!-- Improvement Planner -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2 class="card-title">Grade Improvement Planner</h2>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 12px;">
+                                    <label for="impr-credits">Subject Credit weight</label>
+                                    <input type="number" class="form-control" id="impr-credits" value="4" min="1">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 12px;">
+                                    <label for="impr-current-gp">Current Grade Point</label>
+                                    <input type="number" class="form-control" id="impr-current-gp" value="6" min="0" max="10">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 12px;">
+                                    <label for="impr-expected-gp">Target Grade Point</label>
+                                    <input type="number" class="form-control" id="impr-expected-gp" value="9" min="0" max="10">
+                                </div>
+                                <button class="action-btn secondary" style="width: 100%; margin-top: 10px;" id="btn-calculate-improvement">Estimate Improvement</button>
+                                
+                                <div style="margin-top: 20px; font-weight: 600; font-size: 14px;" id="impr-calc-result">
+                                    Projection: Compute to view CGPA impact.
+                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Attendance Eligibility Calculator -->
+                    <!-- Panel 2: IAT Tracker & ESE Goal Predictor -->
+                    <div class="suite-tab-panel" id="suite-panel-iat-tracker">
                         <div class="card">
                             <div class="card-header">
-                                <h2 class="card-title">Attendance & Shortage Tracker</h2>
+                                <h2 class="card-title">Internal Assessments (IAT) & End-Semester Goal Tracker</h2>
+                                <div style="display: flex; gap: 8px;">
+                                    <button class="action-btn secondary" id="btn-iat-sync">Sync to Marks Entry</button>
+                                    <button class="action-btn" id="btn-iat-recalc">Recalculate ESE Goals</button>
+                                </div>
                             </div>
-                            <div class="form-group" style="margin-bottom: 12px;">
-                                <label for="att-conducted">Total Classes Conducted</label>
-                                <input type="number" class="form-control" id="att-conducted" value="60" min="1">
-                            </div>
-                            <div class="form-group" style="margin-bottom: 12px;">
-                                <label for="att-attended">Total Classes Attended</label>
-                                <input type="number" class="form-control" id="att-attended" value="40" min="0">
-                            </div>
-                            <div class="form-group" style="margin-bottom: 12px;">
-                                <label for="att-target">Target Attendance Threshold (%)</label>
-                                <input type="number" class="form-control" id="att-target" value="75" min="0" max="100">
-                            </div>
-                            <button class="action-btn secondary" style="width: 100%; margin-top: 10px;" id="btn-calculate-attendance">Track Attendance</button>
-                            
-                            <div style="margin-top: 20px; font-weight: 600; font-size: 14px; line-height: 1.5;" id="att-calc-result">
-                                Status: Enter classes to view metrics.
+                            <p class="section-desc" style="color: var(--color-muted); font-size: 13px; margin-bottom: 15px; line-height: 1.5;">
+                                Enter your midterm/internal assessment test marks. The tool will calculate your current internal score and estimate what marks you need in the End-Semester Exam (ESE) to achieve your target grade.
+                            </p>
+                            <div class="table-responsive">
+                                <table class="subjects-table" id="iat-tracker-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Subject</th>
+                                            <th>IAT 1 (Max 50)</th>
+                                            <th>IAT 2 (Max 50)</th>
+                                            <th>Assgn/Quiz (Max 10)</th>
+                                            <th>Calculated Internals</th>
+                                            <th>Desired Grade</th>
+                                            <th>Required ESE Mark</th>
+                                            <th>Feasibility Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="iat-tracker-tbody">
+                                        <!-- Populated dynamically -->
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Improvement Planner -->
+                    <!-- Panel 3: Semester Sandbox & GPA Simulator -->
+                    <div class="suite-tab-panel" id="suite-panel-sandbox">
                         <div class="card">
                             <div class="card-header">
-                                <h2 class="card-title">Grade Improvement Planner</h2>
+                                <h2 class="card-title">Interactive GPA Sandbox & Real-time Simulator</h2>
+                                <button class="action-btn secondary" id="btn-reset-sandbox">Reset Simulator</button>
                             </div>
-                            <div class="form-group" style="margin-bottom: 12px;">
-                                <label for="impr-credits">Subject Credit weight</label>
-                                <input type="number" class="form-control" id="impr-credits" value="4" min="1">
-                            </div>
-                            <div class="form-group" style="margin-bottom: 12px;">
-                                <label for="impr-current-gp">Current Grade Point</label>
-                                <input type="number" class="form-control" id="impr-current-gp" value="6" min="0" max="10">
-                            </div>
-                            <div class="form-group" style="margin-bottom: 12px;">
-                                <label for="impr-expected-gp">Target Grade Point</label>
-                                <input type="number" class="form-control" id="impr-expected-gp" value="9" min="0" max="10">
-                            </div>
-                            <button class="action-btn secondary" style="width: 100%; margin-top: 10px;" id="btn-calculate-improvement">Estimate Improvement</button>
+                            <p class="section-desc" style="color: var(--color-muted); font-size: 13px; margin-bottom: 20px; line-height: 1.5;">
+                                Drag the sliders to simulate subject marks. Lock specific subjects using the 🔒 checkbox, then slide the <b>Target Semester GPA</b> to automatically compute what scores you need in other subjects!
+                            </p>
                             
-                            <div style="margin-top: 20px; font-weight: 600; font-size: 14px;" id="impr-calc-result">
-                                Projection: Compute to view CGPA impact.
+                            <div class="sandbox-dashboard">
+                                <div class="sandbox-stats-grid">
+                                    <div class="sandbox-stat">
+                                        <span class="sandbox-stat-label">Simulated SGPA</span>
+                                        <span class="sandbox-stat-value" id="sandbox-sgpa">0.00</span>
+                                    </div>
+                                    <div class="sandbox-stat">
+                                        <span class="sandbox-stat-label">Simulated CGPA</span>
+                                        <span class="sandbox-stat-value" id="sandbox-cgpa">0.00</span>
+                                    </div>
+                                    <div class="sandbox-stat-slider-container">
+                                        <label for="sandbox-target-sgpa-slider" style="font-weight: 600; font-size: 13px;">Target Semester GPA</label>
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <input type="range" id="sandbox-target-sgpa-slider" min="0" max="10" step="0.05" value="8.0" style="flex: 1;">
+                                            <span id="sandbox-target-sgpa-val" style="font-weight: bold; min-width: 35px;">8.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sandbox-sliders-container" id="sandbox-sliders-list">
+                                    <!-- Populated dynamically -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel 4: Diagnostics & Recommendations -->
+                    <div class="suite-tab-panel" id="suite-panel-diagnostics">
+                        <div class="diagnostics-layout">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2 class="card-title">Academic Diagnostics Report</h2>
+                                </div>
+                                <div class="diagnostics-grids">
+                                    <div class="diagnostic-card">
+                                        <h4>Performance Trend</h4>
+                                        <div class="diag-metric" id="diag-trend-text">Steady 📊</div>
+                                        <p id="diag-trend-desc" style="font-size: 12px; line-height: 1.4; color: var(--color-muted); margin-top: 8px;"></p>
+                                    </div>
+                                    <div class="diagnostic-card">
+                                        <h4>Backlog / Re-appear Alert</h4>
+                                        <div class="diag-metric" id="diag-backlog-count">0</div>
+                                        <p id="diag-backlog-desc" style="font-size: 12px; line-height: 1.4; color: var(--color-muted); margin-top: 8px;"></p>
+                                    </div>
+                                </div>
+
+                                <h3 style="margin-top: 24px; margin-bottom: 12px; font-size: 16px;">Domain-wise Grade Point Average (GPA)</h3>
+                                <div class="domain-scores-list" id="diag-domains-list">
+                                    <!-- Populated dynamically -->
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2 class="card-title">Smart Action Recommendations</h2>
+                                </div>
+                                <div class="recommendations-container" id="diag-recommendations-list">
+                                    <!-- Dynamically loaded card items -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel 5: Transcript Profile Builder -->
+                    <div class="suite-tab-panel" id="suite-panel-transcript">
+                        <div class="transcript-controls-wrapper">
+                            <div class="card no-print" style="flex: 1; max-width: 320px;">
+                                <div class="card-header">
+                                    <h2 class="card-title">Profile Designer</h2>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 12px;">
+                                    <label for="transcript-design-theme">Select Design Theme</label>
+                                    <select class="form-control" id="transcript-design-theme">
+                                        <option value="trans-theme-glass">🌌 Modern Glassmorphism</option>
+                                        <option value="trans-theme-slate">🌑 Midnight Slate</option>
+                                        <option value="trans-theme-cream">📜 Classic Cream</option>
+                                        <option value="trans-theme-cyber">💜 Cyber Royal</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px; margin-top: 15px;">
+                                    <input type="checkbox" id="transcript-toggle-chart" checked>
+                                    <label for="transcript-toggle-chart" style="margin-bottom: 0;">Show GPA Trend Chart</label>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                                    <input type="checkbox" id="transcript-toggle-badges" checked>
+                                    <label for="transcript-toggle-badges" style="margin-bottom: 0;">Show Achievement Badges</label>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                                    <input type="checkbox" id="transcript-toggle-subjects" checked>
+                                    <label for="transcript-toggle-subjects" style="margin-bottom: 0;">Show Subject Details</label>
+                                </div>
+                                <button class="action-btn" style="width: 100%; margin-top: 20px;" id="btn-print-transcript">🖨️ Print Transcript Profile</button>
+                            </div>
+
+                            <!-- Live Preview Area -->
+                            <div class="transcript-preview-area">
+                                <div class="transcript-card trans-theme-glass" id="transcript-card-container">
+                                    <div class="transcript-banner">
+                                        <div style="display: flex; gap: 15px; align-items: center;">
+                                            <div class="transcript-avatar" id="transcript-avatar-img">JD</div>
+                                            <div>
+                                                <h2 class="transcript-student-name" id="trans-student-name">John Doe</h2>
+                                                <p class="transcript-student-college" id="trans-student-college">CEG Campus, Anna University</p>
+                                            </div>
+                                        </div>
+                                        <div style="text-align: right;">
+                                            <div class="transcript-stat-val" id="trans-cgpa-value">0.00</div>
+                                            <div class="transcript-stat-lbl">Cumulative CGPA</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="transcript-details-grid">
+                                        <div><strong>Register No:</strong> <span id="trans-reg-no">-</span></div>
+                                        <div><strong>Department:</strong> <span id="trans-dept">-</span></div>
+                                        <div><strong>Degree & Course:</strong> <span id="trans-course">-</span></div>
+                                        <div><strong>Academic Status:</strong> <span id="trans-status" class="badge badge-passed">PASS</span></div>
+                                    </div>
+
+                                    <div class="transcript-badges-row" id="trans-badges-container">
+                                        <!-- Unlocked Badges go here -->
+                                    </div>
+
+                                    <div class="transcript-chart-section" id="trans-chart-section">
+                                        <h4>Academic GPA Progression</h4>
+                                        <div class="chart-container" style="height: 150px; margin-top: 10px;">
+                                            <canvas id="chart-transcript-trend"></canvas>
+                                        </div>
+                                    </div>
+
+                                    <div class="transcript-table-section" id="trans-table-section">
+                                        <h4>Detailed Marks Statement</h4>
+                                        <table class="transcript-table" id="transcript-subjects-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Sem</th>
+                                                    <th>Code</th>
+                                                    <th>Subject Title</th>
+                                                    <th>Credits</th>
+                                                    <th>Grade</th>
+                                                    <th>Point</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Dynamic rows of passed and active subjects -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="transcript-signature-footer">
+                                        <div>
+                                            <div class="sig-line"></div>
+                                            <div>Student Signature</div>
+                                        </div>
+                                        <div>
+                                            <div class="sig-line"></div>
+                                            <div>Generated via ResultAnalyzer</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -596,6 +819,7 @@
     <script src="js/calculator.js?v=1.0.1"></script>
     <script src="js/charts.js?v=1.0.1"></script>
     <script src="js/export.js?v=1.0.1"></script>
+    <script src="js/academic-suite.js?v=1.0.1"></script>
     <script src="js/app.js?v=1.0.1"></script>
 </body>
 </html>

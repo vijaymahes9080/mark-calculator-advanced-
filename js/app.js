@@ -26,6 +26,11 @@ class AppController {
         this.initDOMElements();
         this.loadInitialState();
         this.registerEvents();
+
+        // Initialize Smart Academic Suite
+        this.academicSuite = new SmartAcademicSuite(this);
+        window.academicSuiteInstance = this.academicSuite;
+
         this.routeTab(this.preferences.activeTab || 'home');
     }
 
@@ -403,6 +408,11 @@ class AppController {
         if (tabId === 'analytics') {
             this.updateAllCharts();
         }
+
+        // When visiting predictors, sync it
+        if (tabId === 'predictors' && this.academicSuite) {
+            this.academicSuite.onSemesterDataUpdated();
+        }
     }
 
     populateUniversitySelector(searchQuery = '') {
@@ -549,6 +559,11 @@ class AppController {
         // Reset undo redo stack for new semester context
         this.undoStack = [];
         this.redoStack = [];
+
+        // Update Smart Academic Suite
+        if (this.academicSuite) {
+            this.academicSuite.onSemesterDataUpdated();
+        }
     }
 
     addSubjectRow(data = null, logChange = true) {
@@ -697,10 +712,12 @@ class AppController {
     }
 
     readSubjectsFromTable() {
+        const currentSem = this.studentDetails.semester;
+        const storedSubjects = StorageManager.getSemesterSubjects(currentSem);
         const subjects = [];
         const trs = this.subjectTableBody.querySelectorAll('tr');
 
-        trs.forEach(tr => {
+        trs.forEach((tr, index) => {
             const code = tr.querySelector('.cell-code').value;
             const name = tr.querySelector('.cell-name').value;
             const credits = tr.querySelector('.cell-credits').value;
@@ -726,6 +743,9 @@ class AppController {
                 remarksVal = 'Pending calculation';
             }
 
+            // Get existing subject properties to preserve
+            const existingSub = storedSubjects[index] || {};
+
             subjects.push({
                 code: code,
                 name: name,
@@ -739,7 +759,12 @@ class AppController {
                 gradePoint: gp,
                 earnedCredits: earned,
                 status: statusVal,
-                remarks: remarksVal
+                remarks: remarksVal,
+                // Preserve IAT tracker values
+                iat1: existingSub.iat1,
+                iat2: existingSub.iat2,
+                assignment: existingSub.assignment,
+                desiredGrade: existingSub.desiredGrade
             });
         });
 
@@ -933,6 +958,11 @@ class AppController {
         document.getElementById('stats-median').innerText = overallStats.median || '0.0';
 
         this.showToast('Calculations completed! Charts generated.', 'success');
+
+        if (this.academicSuite) {
+            this.academicSuite.onSemesterDataUpdated();
+        }
+
         this.routeTab('analytics');
     }
 
