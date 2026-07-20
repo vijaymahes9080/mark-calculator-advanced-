@@ -1,0 +1,12 @@
+{
+    "name": "vijaymahes9080/mark-calculator-advanced",
+    "description": "Universal Indian University Result Analyzer & CGPA Calculator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vijay Mahes",
+            "email": "Vijaypradhap2004@gmail.com"
+        }
+    ],
+    "require": {}
+}
