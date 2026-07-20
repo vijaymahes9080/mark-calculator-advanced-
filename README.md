@@ -145,12 +145,28 @@
 
 ## 🔮 Smart Academic Suite & Predictor Tools
 
-ResultAnalyzer Advanced now features an integrated **Smart Academic Suite** containing four professional-grade planning and forecasting tools:
+ResultAnalyzer Advanced now features an integrated **Smart Academic Suite** containing four professional-grade planning and forecasting tools.
 
-* **📝 IAT Tracker & ESE Goal Predictor**: Enter your mid-term internal marks (IAT 1, IAT 2, assignments) and calculate exactly what you need to score in your final End-Semester Exam (ESE) to achieve target grades (O, A+, A, etc.). Sync calculated internals back to the entry table with one click.
-* **🎛️ Semester Sandbox & GPA Simulator**: Drag interactive sliders to simulate different grade marks. Lock specific courses and slide the *Target Semester GPA* to automatically distribute needed targets proportionally.
-* **📈 Academic Diagnostics & Action Plan**: Category domains auto-detect groups like Mathematics, CS & Coding, and Electrical subjects. Tracks multi-semester trends to give recommendations (e.g. recovery targets).
-* **🎓 Printable Academic Transcript Builder**: Generates beautiful certificates with achievement badges (*Dean's List Honoree*, *Zero Backlogs*, *Code Commando*) and an embedded line graph showing GPA progression. Ready to print (PDF/Paper) using customized print CSS.
+### 📝 IAT Tracker & ESE Goal Predictor
+Enter your mid-term internal marks (IAT 1, IAT 2, assignments) and calculate exactly what you need to score in your final End-Semester Exam (ESE) to achieve target grades (O, A+, A, etc.). Sync calculated internals back to the entry table with one click.
+<p align="center">
+  <img src="assets/iat_tracker_screenshot.png" alt="IAT Tracker & ESE Predictor" width="100%">
+</p>
+
+### 🎛️ Semester Sandbox & GPA Simulator
+Drag interactive sliders to simulate different grade marks. Lock specific courses and slide the *Target Semester GPA* to automatically distribute needed targets proportionally.
+
+### 📈 Academic Diagnostics & Action Plan
+Category domains auto-detect groups like Mathematics, CS & Coding, and Electrical subjects. Tracks multi-semester trends to give recommendations (e.g. recovery targets).
+<p align="center">
+  <img src="assets/diagnostics_screenshot.png" alt="Diagnostics & Recommendations" width="100%">
+</p>
+
+### 🎓 Printable Academic Transcript Builder
+Generates beautiful certificates with achievement badges (*Dean's List Honoree*, *Zero Backlogs*, *Code Commando*) and an embedded line graph showing GPA progression. Ready to print (PDF/Paper) using customized print CSS.
+<p align="center">
+  <img src="assets/transcript_builder_screenshot.png" alt="Academic Transcript Profile Builder" width="100%">
+</p>
 
 In addition, the suite houses the following planning utilities:
 * **🎯 CGPA Predictor & Target Planner**: Compute required GPA scores to hit graduation targets.
@@ -318,7 +334,11 @@ mark-calculator-advanced/
 │   ├── 🖼️ marks_entry_screenshot.png
 │   ├── 🖼️ analytics_charts_screenshot.png
 │   ├── 🖼️ themes_showcase.png
-│   └── 🖼️ predictors_mobile_screenshot.png
+│   ├── 🖼️ predictors_mobile_screenshot.png
+│   ├── 🖼️ iat_tracker_screenshot.png         # IAT tracker [NEW]
+│   ├── 🖼️ diagnostics_screenshot.png         # Diagnostics engine [NEW]
+│   ├── 🖼️ transcript_builder_screenshot.png  # Transcript builder [NEW]
+│   └── 🖼️ profile_theme_screenshot.png       # Transcript theme preview [NEW]
 │
 ├── 📂 css/
 │   ├── 🎨 style.css                 # Core styling
