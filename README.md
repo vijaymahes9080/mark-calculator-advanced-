@@ -10,7 +10,7 @@
 
 <br>
 
-[![Version](https://img.shields.io/badge/version-1.0.1-6C63FF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vijaymahes9080/mark-calculator)
+[![Version](https://img.shields.io/badge/version-1.0.1-6C63FF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vijaymahes9080/mark-calculator-advanced-)
 [![License](https://img.shields.io/badge/license-MIT-00C9A7?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://html5.org)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/)
@@ -18,10 +18,10 @@
 
 <br>
 
-[![Offline Ready](https://img.shields.io/badge/⚡_OFFLINE--READY-No_Internet_Needed-9b59b6?style=for-the-badge)](https://github.com/vijaymahes9080/mark-calculator)
-[![Zero Dependencies](https://img.shields.io/badge/🚀_ZERO-Dependencies-FF6B6B?style=for-the-badge)](https://github.com/vijaymahes9080/mark-calculator)
-[![Universities](https://img.shields.io/badge/🏛️_UNIVERSITIES-40%2B_Supported-2196F3?style=for-the-badge)](https://github.com/vijaymahes9080/mark-calculator)
-[![Themes](https://img.shields.io/badge/🎨_THEMES-6_Beautiful-FF9800?style=for-the-badge)](https://github.com/vijaymahes9080/mark-calculator)
+[![Offline Ready](https://img.shields.io/badge/⚡_OFFLINE--READY-No_Internet_Needed-9b59b6?style=for-the-badge)](https://github.com/vijaymahes9080/mark-calculator-advanced-)
+[![Zero Dependencies](https://img.shields.io/badge/🚀_ZERO-Dependencies-FF6B6B?style=for-the-badge)](https://github.com/vijaymahes9080/mark-calculator-advanced-)
+[![Universities](https://img.shields.io/badge/🏛️_UNIVERSITIES-40%2B_Supported-2196F3?style=for-the-badge)](https://github.com/vijaymahes9080/mark-calculator-advanced-)
+[![Themes](https://img.shields.io/badge/🎨_THEMES-6_Beautiful-FF9800?style=for-the-badge)](https://github.com/vijaymahes9080/mark-calculator-advanced-)
 
 <br>
 
@@ -143,25 +143,19 @@
 
 ---
 
-## 🔮 Predictors & Tools — Desktop & Mobile
+## 🔮 Smart Academic Suite & Predictor Tools
 
-![Predictors & Mobile View](assets/predictors_mobile_screenshot.png)
+ResultAnalyzer Advanced now features an integrated **Smart Academic Suite** containing four professional-grade planning and forecasting tools:
 
-> *Responsive across all devices. Tools work perfectly on phones for quick on-the-go calculations.*
+* **📝 IAT Tracker & ESE Goal Predictor**: Enter your mid-term internal marks (IAT 1, IAT 2, assignments) and calculate exactly what you need to score in your final End-Semester Exam (ESE) to achieve target grades (O, A+, A, etc.). Sync calculated internals back to the entry table with one click.
+* **🎛️ Semester Sandbox & GPA Simulator**: Drag interactive sliders to simulate different grade marks. Lock specific courses and slide the *Target Semester GPA* to automatically distribute needed targets proportionally.
+* **📈 Academic Diagnostics & Action Plan**: Category domains auto-detect groups like Mathematics, CS & Coding, and Electrical subjects. Tracks multi-semester trends to give recommendations (e.g. recovery targets).
+* **🎓 Printable Academic Transcript Builder**: Generates beautiful certificates with achievement badges (*Dean's List Honoree*, *Zero Backlogs*, *Code Commando*) and an embedded line graph showing GPA progression. Ready to print (PDF/Paper) using customized print CSS.
 
-```
-🎯  CGPA Predictor & Target Planner
-    → Enter completed credits, remaining credits & target CGPA
-    → Instantly get the required GPA you need to achieve
-
-📅  Attendance & Shortage Tracker
-    → Enter total & attended classes + threshold %
-    → See your attendance % & how many classes you need
-
-📈  Grade Improvement Planner
-    → Input current grade point & target grade point
-    → Estimate how your CGPA will improve
-```
+In addition, the suite houses the following planning utilities:
+* **🎯 CGPA Predictor & Target Planner**: Compute required GPA scores to hit graduation targets.
+* **📅 Attendance & Shortage Tracker**: Input conducted/attended classes to track attendance percentages and view minimum class clearance counts.
+* **📈 Grade Improvement Planner**: Evaluate the CGPA impact of replacing or upgrading specific subject grades.
 
 ---
 
@@ -169,10 +163,10 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/vijaymahes9080/mark-calculator.git
+git clone https://github.com/vijaymahes9080/mark-calculator-advanced-.git
 
 # Navigate to project
-cd mark-calculator
+cd mark-calculator-advanced-
 
 # Open in browser (no server needed!)
 start index.html          # Windows
@@ -313,9 +307,10 @@ xdg-open index.html       # Linux
 ## 📁 Project Structure
 
 ```
-mark-calculator/
+mark-calculator-advanced/
 │
-├── 📄 index.html                    # Main application entry (single file)
+├── 📄 index.html                    # Main application entry
+├── 📄 composer.json                 # Composer details
 │
 ├── 📂 assets/                       # App screenshots & images
 │   ├── 🖼️ hero_banner.png
@@ -328,7 +323,8 @@ mark-calculator/
 ├── 📂 css/
 │   ├── 🎨 style.css                 # Core styling
 │   ├── 🎨 themes.css                # 6 theme definitions
-│   └── 📱 responsive.css            # Mobile responsiveness
+│   ├── 🎨 responsive.css            # Mobile responsiveness
+│   └── 🎨 academic-suite.css        # Smart Suite styles [NEW]
 │
 └── 📂 js/
     ├── 💾 storage.js                # LocalStorage manager
@@ -337,6 +333,7 @@ mark-calculator/
     ├── 🔢 calculator.js             # GPA/CGPA calculations
     ├── 📈 charts.js                 # Canvas chart rendering
     ├── 📤 export.js                 # CSV/Excel/PDF export
+    ├── 🔮 academic-suite.js         # Smart Suite logic [NEW]
     └── 🚀 app.js                    # Main controller
 ```
 
